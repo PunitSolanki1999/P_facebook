@@ -1,0 +1,28 @@
+{% extends 'user/base.html' %}
+{% block content %}
+<style>
+    .search{
+            background-color:green;
+    }
+    .view{
+            text-decoration:None;
+            color:green;
+            font-size:20px;
+    }
+</style>
+<form action='.' method="POST">{% csrf_token %}
+    <div class="search_it">
+    <h1>Search</h1>
+    {{ form.name }}
+    <input type='submit' value='Submit'>
+</div>
+</form>
+<br>
+{% if user != None %}
+{% for i in user %}
+   <a class='view' href="{% url 'user:search-info' pk=i.pk %}" >{{ i.fname|title }}  {{ i.lname|title }}</a><br>
+   ---------------------------<br>
+{% endfor %}
+{% endif %}
+        
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'user/base.html' %}
+{% block content %}
+   <h1 style="margin-left:100px;">Search Info</h1>
+   <div style="position:absolute; margin-left:450px; font-size:35px; ">
+           Username<br>
+           Name<br>
+           DOB<br>
+           Address <br>
+           City<br>
+   </div>
+   <div style="position:fixed; margin-left:630px; font-size:35px; font-style:oblique">
+   : {{ user.username }}<br>
+   : {{ user.fname }} {{ user.lname }}<br>
+   : {{ user.dob }}<br>
+   : {{ user.address }}<br>
+   : {{ user.city }}<br>   
+   </div>   
+   <div style="margin-left:100px; position:absolute; text-align:center;">
+   <img src="{{ user.picture.url }}"  heigth=270px width=270px  style=" 
+                                             
+                                             border:4px solid blue;
+                                             " />
+    </div>
+
+            
+{% endblock %}

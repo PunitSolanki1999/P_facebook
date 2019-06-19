@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>P-Facebook</title>
+        <style>
+            .field{
+                padding:5px;
+
+            }
+            .box{
+                width:400px;
+                text-align:center;
+                margin-top:200px;
+                margin-left:570px;
+                border:3px solid black;
+                border-radius:25px;
+                padding-bottom:30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='box'>
+            <h1>Login</h1>
+        <form action='.' method='POST'>{% csrf_token %}
+            {% if username_not_available == True %}
+            <h1>Username Is Incorrect</h1>
+            {% elif password_not_available == True %}
+            <h1>Password Is Incorrect</h1>
+            {% endif %}
+            {{ form.as_p }}
+            <input type='submit' value='Login'>
+        </form>
+    </div>
+    </body>
+</html>

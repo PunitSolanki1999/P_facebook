@@ -1,0 +1,55 @@
+{% extends 'user/base.html' %}
+{% block content %}
+<style>
+        .update{
+                background-color:green;
+        }
+        .box{
+                border:3px solid black;
+                
+                padding:20px 220px 60px 35px;
+                border-radius:25px;
+                
+                
+        }
+        .field{
+                padding:10px;
+                text-align:center;
+        }
+        .the_info{
+                position:absolute;
+                font-size:35px;
+                padding-top:5px;
+                line-height: 56px;
+                
+        }
+        .form{
+                position:absolute;
+                margin-left:190px;
+                
+        }
+        .button{
+                margin-top:310px;
+                margin-left:150px;
+        }
+</style>
+
+<form action='.' method='POST'>{% csrf_token %}
+        <div class="box">
+        
+        <h1>Update Your Info</h1>
+        <div class='the_info'">
+                First Name -<br>
+                Last Name - <br>
+                DOB - <br>
+                Address - <br>
+                City -<br>
+        </div>
+        <div class='form'">
+         {{ form.as_p }}
+        </div>
+        <input class='button' type='submit' value='submit'>
+        </div>
+</form>
+        
+{% endblock %}
